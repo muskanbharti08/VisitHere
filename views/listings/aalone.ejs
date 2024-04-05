@@ -1,0 +1,24 @@
+<%- include('header/head.ejs'); -%>
+<body class="bg-zinc-300 scroll-smooth"></body>
+    <div class="font-bold text-white bg-neutral-600 flex space-x-5 justify-start text-lg p-2 rounded-b-xl">
+    <h1 class="ml-6">Ayush</h1>
+    <h1 class="cursor-pointer">Add dataings</h1>
+
+
+
+
+
+    </div>
+
+    <div class="bg-neutral-400 p-2  border-2 border-zinc-500 hover:border-white my-2 w-11/12  mx-auto rounded-md">
+        <p class="ml-4 transition duration:1000 ease-in-out delay-150  hover:-translate-y-1 text-white font-bold text-center text-xl"> <%= data.title %> </p>
+        <p class="ml-4 text-gray-800 font-bold text-lg"> <%= data.description %></p>
+       <img src="<%= data.image %>" alt="hyy boy" class="my-4 hover:-translate-y-1 transition duration:1000 ease-in-out delay-150 brightness-75 saturate-90 hover:saturate-100 hover:brightness-100   border-4 border-zinc-500 rounded-xl h-96 sm:w-1/2 mx-auto ">
+    <p class="ml-4"><span class="font-bold text-xl ">price : &#8377</span>  <span class="text-black  font-bold"><%= data.price %></span></p>
+    <p class="ml-4 font-bold text-lg">location: <span class="text-neutral-900"><%= data.location %></span> </p>
+    <p class=""><%= data.country %></p>
+    <form action="/listings/edit/<%= data.id %>" method="get" class="">
+    <button class="ml-4 bg-zinc-800 text-xl my-2 rounded-md border-2 px-2 py-1 text-white font-bold">Edit</button>
+    </form>
+    </div>
+    </body>

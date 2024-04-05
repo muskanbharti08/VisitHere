@@ -1,0 +1,76 @@
+let m1 = document.querySelector('.m1');
+let m2 = document.querySelector('.m2');
+let m3 = document.querySelector('.m3');
+let m4 = document.querySelector('.m4');
+let m5 = document.querySelector('.m5');
+
+
+let  colorchange = (obj,t)=>{
+
+    return new Promise(
+        (resolve,reject)=>{
+
+            obj.classList.add('text-red-200');
+                setTimeout(() => {
+                    obj.classList.add("scale-150");
+                    obj.classList.remove("text-red-200");
+                    obj.classList.add("text-white");
+                   
+                    setInterval(() => {
+                        
+                    resolve();
+                    }, 300);
+                    
+
+                },t);
+                  
+        }
+    );
+
+
+}
+    
+let  colchange = (obj,t)=>{
+
+    return new Promise(
+        (resolve,reject)=>{
+            obj.classList.remove("text-white");
+            obj.classList.add("text-sky-500");
+                setTimeout(() => {
+                  
+                    obj.classList.remove("text-sky-500");
+                    obj.classList.add("text-white");
+                    resolve();
+
+                },t);
+                  
+        }
+    );
+
+
+}
+    
+
+let x = async ()=>{
+await colorchange(m1,0);
+await colorchange(m5,1000);
+await colorchange(m2,1000);
+await colorchange(m4,1000);
+await colorchange(m3,1000);
+
+await colchange(m1,800);
+await colchange(m2,350);
+await colchange(m3,350);
+await colchange(m4,350);
+await colchange(m5,600);
+await colchange(m4,350);
+await colchange(m3,350);
+await colchange(m2,350);
+await colchange(m1,800);
+
+
+
+}
+
+
+x();

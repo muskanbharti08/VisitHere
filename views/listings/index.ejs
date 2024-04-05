@@ -1,0 +1,67 @@
+<%- include('header/head.ejs'); -%>
+<body class="bg-zinc-300 scroll-smooth"></body>
+    <div class="header font-bold flex justify-between text-white bg-neutral-600  text-lg p-2 rounded-b-xl items-center">
+   
+   <div class="flex space-x-12 space-evenly">
+    <h1 class="ml-6">VisitHere</h1>
+    <a href="/add" class=""><h1 class="cursor-pointer hover:text-red-400">Add Listings</h1></a>
+   </div>    
+   <i class="bulb fixed bottom-16 sm:bottom-24 text-black fa-solid fa-lightbulb ml-2  sm:ml-4"></i>
+</div>
+<div class="sm:grid  sm:grid-cols-2 ">
+<%  for(list of allListings){  %>
+    
+<div class="bg-neutral-400  p-2 box border-2 border-zinc-500 hover:border-white my-2 w-11/12  mx-auto rounded-md">
+    <p class="ml-4 boxHeading transition duration:1000 ease-in-out delay-150  hover:-translate-y-1 text-white font-bold text-center text-xl"> <%= list.title %> </p>
+    <p class="ml-4 desHeading text-gray-800 font-bold text-lg"> <%= list.description %></p>
+
+    <a href="/listings/<%= list.id %>"  >    <img src="<%= list.image %>" alt="hyy boy" class="my-4 hover:-translate-y-1 transition duration:1000 ease-in-out delay-150 brightness-75 saturate-90 hover:saturate-100 hover:brightness-100 hover:skew-x-1 hover:skew-y-1 hover:border-white hover:scale-105   border-4 border-zinc-500 rounded-xl h-80 w-11/12 mx-auto ">
+
+    </a>        <p class="ml-4"><span class="font-bold text-xl ">price : &#8377</span>  <span class="text-black  font-bold"><%= list.price %></span></p>
+<p class="ml-4 font-bold text-lg">location: <span class="text-neutral-900"><%= list.location %></span> </p>
+<p class=""><%= list.country %></p>
+<!-- <form action="/listings/:" method="post" class="">
+<button class="ml-4 bg-zinc-800 text-xl my-2 rounded-md border-2 px-2 py-1 text-white font-bold">Edit</button>
+</form> -->
+</div>
+
+<% } %>
+
+</div>
+
+
+<%- include('header/footer.ejs'); -%>
+
+</body>
+<script>
+    let bulb = document.querySelector('.bulb');
+    let header = document.querySelector('.header');
+    let bot = document.querySelector('.bot');
+    let body = document.querySelector('body');
+    let box = document.querySelectorAll('.box');
+    let boxHeading = document.querySelectorAll('.boxHeading');
+    let desHeading = document.querySelectorAll('.desHeading');
+    bulb.addEventListener('click',()=>{
+        console.log("clicked");
+        body.classList.toggle("bg-zinc-300");
+        header.classList.toggle("bg-zinc-300");
+        bot.classList.toggle("bg-zinc-200");
+        header.classList.toggle("bg-orange-400/90");
+        bot.classList.toggle("bg-orange-400");
+       for(el of box) el.classList.toggle("bg-orange-100");
+       for(el of boxHeading) el.classList.toggle("text-blue-500 ");
+       
+       for(el of desHeading) el.classList.toggle("text-orange-900");
+    
+    
+        console.log("clicked");
+    })
+    
+    <%-  include('header/promise.ejs'); -%>
+    </script>
+</html>
+
+
+   
+    
+

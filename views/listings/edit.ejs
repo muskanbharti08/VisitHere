@@ -1,0 +1,64 @@
+<%- include('header/head.ejs'); -%>
+<body class="bg-zinc-300 scroll-smooth"></body>
+    <div class="header font-bold flex justify-between text-white bg-neutral-600  text-lg p-2 rounded-b-xl items-center">
+   
+   <div class="flex space-x-5 justify-start">
+    <h1 class="ml-6">Ayush</h1>
+     </div>    
+   <i class="bulb fa-solid fa-lightbulb mr-4"></i>
+</div>
+<div class=" ">
+
+
+
+
+
+
+
+
+<form action="/update/<%= data.id %>" method="get" class="border-2 border-gray-400 w-11/12 sm:w-1/2 mx-auto px-2">
+<p class=" font-bold left-2 ">title:</p><input type="text" name="title" value="<%= data.title %>" placeholder="<%= data.title %>" class="w-11/12 py-1 mx-2 rounded-md px-2 bg-zinc-400">
+<p class=" font-bold left-2 ">Description:</p><textarea type="text" name="description" value="<%= data.description %>" placeholder="<%= data.description %>" class="w-11/12 py-1 mx-2  rounded-md px-2"></textarea>
+<p class=" font-bold left-2 ">image url:</p><input type="text" name="image"  placeholder="<%= data.image %>" class="w-11/12 py-1 mx-2 rounded-md px-2 bg-zinc-400">
+<p class=" font-bold left-2 ">price:</p><input type="text" name="price"  placeholder="<%= data.price %>" class="w-11/12 py-1 mx-2 rounded-md px-2 bg-zinc-400">
+<p class=" font-bold left-2 ">location:</p><input type="text" name="location"  placeholder="<%= data.location %>" class="w-11/12 py-1 mx-2 rounded-md px-2 bg-zinc-400">
+
+<button class="ml-4 bg-zinc-800 text-xl my-2 rounded-md border-2 px-2 py-1 text-white font-bold">Update</button>
+    
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<%- include('header/footer.ejs'); -%>
+</div>
+<script>
+     let bulb = document.querySelector('.bulb');
+     let body = document.querySelector('body');
+     let bot = document.querySelector('.bot');
+    
+    let header = document.querySelector('.header');
+    bulb.addEventListener('click',()=>{
+        console.log("clicked");
+        body.classList.toggle("bg-zinc-300");
+        header.classList.toggle("bg-zinc-300");
+        header.classList.toggle("bg-blue-400/90");
+        bot.classList.toggle("bg-blue-400");
+      
+    });
+
+<%-  include('header/promise.ejs'); -%>
+
+</script>
+</body>
